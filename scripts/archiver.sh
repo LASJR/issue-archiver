@@ -100,6 +100,8 @@ s3cmd \
   --no-check-certificate \
   put laj-$LAJ_YEAR-$LAJ_ISSUE.zip s3://$S3_BUCKET
 
+rm laj-$LAJ_YEAR-$LAJ_ISSUE.zip 
+rm -rf laj-$LAJ_YEAR-$LAJ_ISSUE
 
 cat <<EOF > /etc/msmtprc
 # Set default values for all following accounts. 
@@ -118,7 +120,7 @@ password $SMTP_USER_PASSWORD
 EOF
 
 cat <<EOF > message.txt
-From: info@zzr.ru
+From: $SMTP_FROM_ADDRESS
 Subject: Архив выпуска ЛЖНИ №$LAJ_ISSUE / $LAJ_YEAR для регистрации в Информрегистре создан
 
 Загрузите архив по ссылке https://$S3_BUCKET.$S3_HOST/laj-$LAJ_YEAR-$LAJ_ISSUE.zip

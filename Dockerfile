@@ -8,4 +8,7 @@ COPY scripts /app/scripts
 COPY endpoints /app/endpoints     
 RUN chmod -R +x /app/scripts
 RUN chmod -R +x /app/endpoints
+RUN chmod +x /app/webhookd
+EXPOSE 8080
 ENTRYPOINT ["./webhookd", "-scripts", "/app/endpoints"]
+
