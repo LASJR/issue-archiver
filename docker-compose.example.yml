@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  laj-issue-archiver:
+    image: ghcr.io/lasjr/issue-archiver
+    container_name: lasjr-issue-archiver
+    restart: always
+    environment:
+      - S3_BUCKET=
+      - S3_ACCESS_KEY=
+      - S3_SECRET_KEY=
+      - SMTP_HOST=
+      - SMTP_PORT=
+      - SMTP_FROM_ADDRESS=
+      - SMTP_USER_ADDRESS=
+      - SMTP_USER_PASSWORD=
+      - SMTP_TO_ADDRESS=
