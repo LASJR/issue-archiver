@@ -81,7 +81,7 @@ if [ -z ${S3_HOST_BUCKET+x} ]; then
 	  export S3_HOST_BUCKET='%(bucket)s.storage.yandexcloud.net'
 fi
 
-httrack http://labanimalsjournal.ru/ru/contents/$LAJ_YEAR/$LAJ_ISSUE -B \
+httrack https://labanimalsjournal.ru/ru/contents/$LAJ_YEAR/$LAJ_ISSUE -B \
 	--path laj-$LAJ_YEAR-$LAJ_ISSUE \
 	--depth=3 \
 	--ext-depth=0 \
